@@ -1,26 +1,35 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "baseUrl": "./src",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "declaration": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "downlevelIteration": true,
+    "paths": {
+      "@ui": ["components/UI"],
+      "@hooks": ["hooks"],
+      "@api": ["api"]
+    },
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "include": [
-    "src"
-  ]
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.setup.tsx",
+    "jest.config.ts",
+    "jest-env.js"
+  ],
+  "exclude": ["node_modules"]
 }
